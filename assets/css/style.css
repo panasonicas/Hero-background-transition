@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+.flex-container{
+    width:100vw;
+    height:100vh;
+    margin: 0 auto;
+    overflow: hidden; /*NOT ALLOW SCROLING WHEN MOVING BACKGROUND LEFT/RIGHT*/
+}
+
+.viewport{
+    width: 100%;
+    height:100%;
+    position: relative;
+}
+.blokas{
+    width:110%;
+    height:100%;
+    position: absolute;
+    top:0;
+    /* right:-50%; NOT NEED IF WE WRITE IN ANIMATION*/ 
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    /* animation-timing-function: linear; */
+    animation-timing-function: ease-in-out; /*more natural when linear + fit for go and go back*/
+}
+.blokas img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* ----------------ZOOM IN ZOOM OUT + SLIDE TO LEFT AND BACK RIGHT------------------ */
+@keyframes slide{
+    0% {right:-10%; transform: scale(1.0);}
+    50% {right:0%; transform: scale(1.15);}
+    100% {right:-10%; transform: scale(1.0);}
+}
+/* ----------------ZOOM IN ZOOM OUT------------------ */
+/* @keyframes slide{
+    0% {right:-10%;
+    transform: scale(1.0)}
+    50% {transform: scale(1.15)}
+    100% {right:-10%;
+    transform: scale(1.0);}
+} */
